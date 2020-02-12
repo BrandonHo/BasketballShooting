@@ -1,8 +1,8 @@
-# H1 Basketball Shooting
+# Basketball Shooting
 
 This Unity project uses a genetic algorithm to identify a successful basketball shot from any position in a basketball court.
 
-# H2 Demonstration
+# Demonstration
 
 First Generation
 
