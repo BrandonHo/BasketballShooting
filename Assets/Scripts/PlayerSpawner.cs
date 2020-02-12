@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Component which controls the behaviour of the player spawner game object.
+/// </summary>
 public class PlayerSpawner : MonoBehaviour
 {
-    public Vector3 SpawnAreaDimensions;
-    public GameObject PlayerPrefab;
-    private GameObject SpawnedPlayer;
-    private PlayerController SpawnedPlayerController;
+    public Vector3 SpawnAreaDimensions;                 // Area dimensions which indicates where player can be spawned.
+    public GameObject PlayerPrefab;                     // Prefab used for instantiating the player game object.
+    private GameObject SpawnedPlayer;                   // Reference to the spawned player game object.
+    private PlayerController SpawnedPlayerController;   // Reference to the player controller of the spawned player game object.
 
+    /// <summary>
+    /// Utility method for spawning a player game object within the spawn area.
+    /// </summary>
     public void SpawnPlayer()
     {
         if (PlayerPrefab)
@@ -22,24 +28,45 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Utility method for spawning the balls associated with the player game object.
+    /// </summary>
+    /// <param name="numberOfBalls">The number of balls to be spawned.</param>
+    /// <param name="target">Target transform which is used for ball-related calculations.</param>
     public void SpawnBalls(int numberOfBalls, Transform target)
     {
         if (SpawnedPlayerController)
             SpawnedPlayerController.SpawnBalls(numberOfBalls, target);
     }
 
+    /// <summary>
+    /// Utility method for applying forces to a ball, associated with the player game object, at a specific index.
+    /// </summary>
+    /// <param name="upwardForce">Upward force to be applied to the ball at specified index.</param>
+    /// <param name="forwardForce">Forward force to be applied to the ball at specified index.</param>
+    /// <param name="ballIndex">Index of specific ball to receive the applied forces.</param>
     public void ApplyForceToSpecificBall(float upwardForce, float forwardForce, int ballIndex)
     {
         if (SpawnedPlayerController)
-            SpawnedPlayerController.ApplyForceToSpecificBall(upwardForce, forwardForce, ballIndex);
+            SpawnedPlayerController.ApplyForcesToSpecificBall(upwardForce, forwardForce, ballIndex);
     }
 
+    /// <summary>
+    /// Utility method for setting the look direction of the player game object.
+    /// </summary>
+    /// <param name="targetTransform">Target transform to be looked at by the player game object.</param>
     public void SetPlayerLookTarget(Transform targetTransform)
     {
         if (SpawnedPlayer)
             SpawnedPlayer.transform.LookAt(new Vector3(targetTransform.position.x, SpawnedPlayer.transform.position.y, targetTransform.position.z));
     }
 
+    /// <summary>
+    /// Utility method for acquiring a ball at a specified index.
+    /// </summary>
+    /// <param name="ballIndex">Index for acquiring specific ball.</param>
+    /// <param name="ballController">BallController which is referenced if ball at specified index exists.</param>
+    /// <returns>True if ball is found at specified index. False if otherwise.</returns>
     public bool TryGetBallAtSpecificIndex(int ballIndex, out BallController ballController)
     {
         if (SpawnedPlayerController)
@@ -52,12 +79,18 @@ public class PlayerSpawner : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Helper method for resetting the balls associated with the player game object.
+    /// </summary>
     public void ResetPlayerBalls()
     {
         if (SpawnedPlayerController)
             SpawnedPlayerController.ResetBalls();
     }
 
+    /// <summary>
+    /// Debug method used for displaying the spawn area dimensions in the editor.
+    /// </summary>
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

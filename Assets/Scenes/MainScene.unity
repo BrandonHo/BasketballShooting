@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1336596750}
+      - m_Target: {fileID: 0}
         m_MethodName: StartGAEvaluations
         m_Mode: 1
         m_Arguments:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cf371b3ac33214b9525c2e076dda95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasketballGAInterface: {fileID: 1336596750}
+  BasketballGAController: {fileID: 0}
   TextObject: {fileID: 372646168}
   UIEventKey: af
 --- !u!114 &313676845
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cf371b3ac33214b9525c2e076dda95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasketballGAInterface: {fileID: 1336596750}
+  BasketballGAController: {fileID: 0}
   TextObject: {fileID: 345905069}
   UIEventKey: gn
 --- !u!114 &313676846
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cf371b3ac33214b9525c2e076dda95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasketballGAInterface: {fileID: 1336596750}
+  BasketballGAController: {fileID: 0}
   TextObject: {fileID: 1493455582}
   UIEventKey: s
 --- !u!1 &345905067
@@ -956,12 +956,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1336596750 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114476727467017730, guid: 498264d8cbea1be43ad38591abc19362,
-    type: 2}
-  m_PrefabInternal: {fileID: 2049816283}
-  m_Script: {fileID: 11500000, guid: bf2242fc0f69aad45b7f3b1d16b748d2, type: 3}
 --- !u!1 &1493455580
 GameObject:
   m_ObjectHideFlags: 0

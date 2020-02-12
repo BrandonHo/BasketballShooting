@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199250628194104}
-  - component: {fileID: 114476727467017730}
+  - component: {fileID: 114642116127319890}
   m_Layer: 0
   m_Name: BasketballCourt
   m_TagString: Untagged
@@ -1441,7 +1441,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114476727467017730
+--- !u!114 &114642116127319890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1449,15 +1449,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036363769621336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf2242fc0f69aad45b7f3b1d16b748d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a04e92f37c1fa4f8e63798ddd220ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RandomSeed: 0
   PopulationSize: 50
   MutationRate: 0.01
   DurationPerGeneration: 10
-  UpwardForceThreshold: 20
-  ForwardForceThreshold: 20
+  UpwardForceThreshold: 60
+  ForwardForceThreshold: 60
   PlayerSpawnerRef: {fileID: 114078630383291832}
   BasketTarget: {fileID: 114173649891037710}
 --- !u!136 &136456117238289712

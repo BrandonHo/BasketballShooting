@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Component which contains the functional logic for handling collisions between
+/// ball game objects and this hole ("hoop") game object.
+/// </summary>
 public class Hole : MonoBehaviour
 {
-    public Transform ScoreSpawner;
-    public UnityEvent OnBallCollision;
+    public Transform ScoreSpawnerTransform;          // Reference to transform where balls are teleported if scored, collides with this hole game object.
+    public UnityEvent OnBallCollision;      // Unity event which is invoked when a ball collides with this hole game object.
 
     void Awake()
     {
@@ -15,11 +19,15 @@ public class Hole : MonoBehaviour
     {
         if (OnBallCollision != null)
         {
-            if (ScoreSpawner)
+            if (ScoreSpawnerTransform)
             {
                 OnBallCollision.Invoke();
-                other.GetComponent<BallController>().IsScored = true;
-                other.GetComponent<BallController>().ResetToPosition(ScoreSpawner.transform.position);
+
+                // Update ball score status + reset ball position to specified spawner
+                BallController otherBallController = other.GetComponent<BallController>();
+                otherBallController.IsScored = true;
+                otherBallController.ResetVelocity();
+                otherBallController.SetPosition(ScoreSpawnerTransform.transform.position);
             }
         }
     }
