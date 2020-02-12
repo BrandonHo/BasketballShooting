@@ -1,14 +1,18 @@
-#H1 Basketball Shooting
+# H1 Basketball Shooting
 
 This Unity project uses a genetic algorithm to identify a successful basketball shot from any position in a basketball court.
 
-#H2 Demonstration
+# H2 Demonstration
 
-First Generation: ![First Generation Demo](demo/demo1.gif)
+# H3 First Generation
 
-100% Score Generation: ![100% Score Generation Demo](demo/demo2.gif)
+![First Generation Demo](demo/demo1.gif)
 
-#H2 Details
+# H3 100% Score Generation
+
+![100% Score Generation Demo](demo/demo2.gif)
+
+# H2 Details
 
 Genetic algorithms involve generating a population of random solutions, and evolving these solutions according to a specific goal. These solutions are represented as chromosomes. In this scenario, chromosomes represent solutions of basketball shots. Chromosomes include two parameters, namely:
 
