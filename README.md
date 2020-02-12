@@ -4,12 +4,10 @@ This Unity project uses a genetic algorithm to identify a successful basketball 
 
 # H2 Demonstration
 
-# H3 First Generation
-
+First Generation
 ![First Generation Demo](demo/demo1.gif)
 
-# H3 100% Score Generation
-
+100% Score Generation
 ![100% Score Generation Demo](demo/demo2.gif)
 
 # H2 Details
