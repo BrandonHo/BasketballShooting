@@ -12,7 +12,7 @@ First Generation
 
 ![100% Score Generation Demo](demo/demo2.gif)
 
-# H2 Details
+# Details
 
 Genetic algorithms involve generating a population of random solutions, and evolving these solutions according to a specific goal. These solutions are represented as chromosomes. In this scenario, chromosomes represent solutions of basketball shots. Chromosomes include two parameters, namely:
 
