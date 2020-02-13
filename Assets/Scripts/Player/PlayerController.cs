@@ -73,4 +73,16 @@ public class PlayerController : MonoBehaviour
         foreach (BallController ballController in SpawnedBallControllers)
             ballController.Reset();
     }
+
+    void Destroy()
+    {
+        if (SpawnedBalls != null)
+        {
+            for (int ballIndex = 0; ballIndex < SpawnedBalls.Length; ballIndex++)
+                Destroy(SpawnedBalls[ballIndex]);
+
+            SpawnedBalls = null;
+            SpawnedBallControllers = null;
+        }
+    }
 }

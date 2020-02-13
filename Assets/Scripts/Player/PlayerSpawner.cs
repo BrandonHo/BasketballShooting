@@ -89,6 +89,24 @@ public class PlayerSpawner : MonoBehaviour
     }
 
     /// <summary>
+    /// Utility debug method used for unit tests. Returns a boolean based on
+    /// if the player game object has been instantiated.
+    /// </summary>
+    /// <returns>True if player game object has been instantiated. False if otherwise.</returns>
+    public bool IsPlayerSpawned()
+    {
+        if (SpawnedPlayer)
+            return true;
+        return false;
+    }
+
+    public void DestroySpawnedPlayer()
+    {
+        if (SpawnedPlayer)
+            Destroy(SpawnedPlayer);
+    }
+
+    /// <summary>
     /// Debug method used for displaying the spawn area dimensions in the editor.
     /// </summary>
     void OnDrawGizmos()

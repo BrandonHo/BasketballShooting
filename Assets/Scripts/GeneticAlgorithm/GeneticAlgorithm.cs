@@ -37,18 +37,6 @@ public class GeneticAlgorithm
     }
 
     /// <summary>
-    /// Utility method used to update the fitness of a chromosome at a specific position.
-    /// </summary>
-    /// <param name="fitness">New fitness value for a specific chromosome.</param>
-    /// <param name="index">index of the chromosome to be updated.</param>
-    public void UpdateChromosomeFitness(float fitness, int index)
-    {
-        if (index < Chromosomes.Count)
-            if (Chromosomes[index] != null)
-                Chromosomes[index].Fitness = fitness;
-    }
-
-    /// <summary>
     /// Primary utility method used for evolving the chromosome population.
     /// </summary>
     /// <param name="avgFitness">Average fitness argument which is referenced in this method.</param>
@@ -89,6 +77,17 @@ public class GeneticAlgorithm
         foreach (Chromosome aChromosome in Chromosomes)
             totalFitness += aChromosome.Fitness;
         return totalFitness;
+    }
+
+    /// <summary>
+    /// Utility method used for performing the selection operation on the chromosome population.
+    /// This method selects two chromosomes which tend to have high fitness values.
+    /// </summary>
+    /// <param name="chromosomeA">The first chromosome returned/referenced as a result of selection.</param>
+    /// <param name="chromosomeB">The second chromosome returned/referenced as a result of selection.</param>
+    public void Selection(out Chromosome chromosomeA, out Chromosome chromosomeB)
+    {
+        Selection(GetTotalFitnessFromChromosomes(), out chromosomeA, out chromosomeB);
     }
 
 
@@ -178,5 +177,26 @@ public class GeneticAlgorithm
             if (index < Chromosomes.Count)
                 return Chromosomes[index];
         return null;
+    }
+
+    /// <summary>
+    /// Utility method used to update the fitness of a chromosome at a specific position.
+    /// </summary>
+    /// <param name="fitness">New fitness value for a specific chromosome.</param>
+    /// <param name="index">index of the chromosome to be updated.</param>
+    public void UpdateChromosomeFitness(float fitness, int index)
+    {
+        if (index < Chromosomes.Count)
+            if (Chromosomes[index] != null)
+                Chromosomes[index].Fitness = fitness;
+    }
+
+    /// <summary>
+    /// Getter method for the list of chromosomes.
+    /// </summary>
+    /// <returns>List of chromosomes from the genetic algorithm.</returns>
+    public List<Chromosome> GetChromosomes()
+    {
+        return Chromosomes;
     }
 }

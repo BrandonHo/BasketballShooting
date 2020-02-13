@@ -27,22 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1043498548502498
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4990528346036860}
-  - component: {fileID: 114078630383291832}
-  m_Layer: 0
-  m_Name: PlayerSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1063344576939542
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,6 +37,22 @@ GameObject:
   - component: {fileID: 4294071278099000}
   m_Layer: 0
   m_Name: ScoreContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1126358495944942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4551744426618042}
+  - component: {fileID: 114865247436238742}
+  m_Layer: 0
+  m_Name: PlayerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,7 +425,7 @@ Transform:
   m_Children:
   - {fileID: 4019135811560352}
   - {fileID: 4524261747068080}
-  - {fileID: 4990528346036860}
+  - {fileID: 4551744426618042}
   - {fileID: 4294071278099000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -583,6 +583,19 @@ Transform:
   m_Father: {fileID: 4199250628194104}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4551744426618042
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126358495944942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4199250628194104}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4801635595446080
 Transform:
   m_ObjectHideFlags: 1
@@ -653,19 +666,6 @@ Transform:
   - {fileID: 4274600677462030}
   m_Father: {fileID: 4524261747068080}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4990528346036860
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043498548502498}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4199250628194104}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23093241296429450
 MeshRenderer:
@@ -1410,20 +1410,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114078630383291832
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043498548502498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f9926e3e063fe4c8d03055b5b0a4d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnAreaDimensions: {x: 30, y: 0, z: 30}
-  PlayerPrefab: {fileID: 1462893365272140, guid: 59124e0efb7429842bc7d1f4bc1ae668,
-    type: 2}
 --- !u!114 &114173649891037710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1432,10 +1418,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280808794795488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f9eb3bc217d8844b61f5e6660c94e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1404466ec45330a458c92c02c6051c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreSpawner: {fileID: 4171510720759542}
+  ScoreSpawnerTransform: {fileID: 4171510720759542}
   OnBallCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -1449,17 +1435,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036363769621336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a04e92f37c1fa4f8e63798ddd220ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e5ca1d2441c10b54db38118b95d75881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RandomSeed: 0
   PopulationSize: 50
   MutationRate: 0.01
-  DurationPerGeneration: 10
-  UpwardForceThreshold: 60
-  ForwardForceThreshold: 60
-  PlayerSpawnerRef: {fileID: 114078630383291832}
+  DurationBeforeEvolution: 10
+  UpwardForceThreshold: 50
+  ForwardForceThreshold: 50
+  SpawnerForPlayer: {fileID: 114865247436238742}
   BasketTarget: {fileID: 114173649891037710}
+--- !u!114 &114865247436238742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126358495944942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41de50ca5deb804abbf45a53dd13484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnAreaDimensions: {x: 0, y: 0, z: 0}
+  PlayerPrefab: {fileID: 1462893365272140, guid: 59124e0efb7429842bc7d1f4bc1ae668,
+    type: 2}
 --- !u!136 &136456117238289712
 CapsuleCollider:
   m_ObjectHideFlags: 1
